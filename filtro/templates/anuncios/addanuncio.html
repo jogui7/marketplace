@@ -1,0 +1,60 @@
+{% load static %}
+<html>
+    <head>
+        <title>MarketPlace</title>
+        <link rel="stylesheet" href="{% static 'css/novoAnuncio.css' %}">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div id="BlocoTopo">
+                <div id="header">
+                    <div id="header_logo">
+                        <a href="/">
+                            <img src="{% static 'img/logo.png' %}" />
+                        </a> 
+                    </div>
+                    <div id="coluna_meio_menu">
+                        <div id="header_menu">
+                            <ul>
+                                {% if user.is_authenticated %}
+                                <li><a>Ola, {{user.get_username}}</a></li>
+                                {% else %}
+                                <li><a href="/accounts/login">LOGIN | CADASTRE-SE</a></li>
+                                {% endif %}
+                                <li><a href="#">MINHAS COMPRAS</a></li>
+                                <li><a href="#">FALE CONOSCO</a></li>
+                                {% if user.is_authenticated %}
+                                <li><a href="/accounts/logout"> SAIR</a></li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                        <div id="header_busca">
+                            <form name="busca">
+                                <input type="text" id="barra_busca">
+                                <button id="bt_busca"><span></span><a>Buscar</a></button>
+                            </form>
+                        </div>
+                    </div>
+                    <div id="header_carrinho">
+                        <a href="#">CARRINHO<span></span></a>
+                    </div>
+                </div>               
+            </div>
+        </header>
+        <main>
+            <div id="BlocoLayoutConteudo">
+                <div class="forms">
+                    <form method="POST" class="form" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <h3>Adicione um novo anuncio:</h3>
+                        
+                        {{ form }}
+                        {{ form.non_field_errors }}
+                        <button type="submit">Anunciar</button>
+                    </form>
+                </div>
+            </div>           
+        </main>
+    </body>
+</html>

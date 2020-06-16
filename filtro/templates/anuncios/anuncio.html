@@ -1,0 +1,99 @@
+{% load static %}
+<html>
+    <head>
+        <title>MarketPlace</title>
+        <link rel="stylesheet" href="{% static 'css/produto.css' %}">
+        <link rel="stylesheet" href="{% static 'owlcarousel/dist/assets/owl.carousel.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'owlcarousel/dist/assets/owl.theme.default.min.css' %}" type="text/css">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div id="BlocoTopo">
+                <div id="header">
+                    <div id="header_logo">
+                        <a href="/">
+                            <img src="{% static 'img/logo.png' %}" />
+                        </a> 
+                    </div>
+                    <div id="coluna_meio_menu">
+                        <div id="header_menu">
+                            <ul>
+                                {% if user.is_authenticated %}
+                                <li><a>Ola, {{user.get_username}}</a></li>
+                                {% else %}
+                                <li><a href="/accounts/login">LOGIN | CADASTRE-SE</a></li>
+                                {% endif %}
+                                <li><a href="#">MINHAS COMPRAS</a></li>
+                                <li><a href="#">FALE CONOSCO</a></li>
+                                {% if user.is_authenticated %}
+                                <li><a href="/accounts/logout"> SAIR</a></li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                        <div id="header_busca">
+                            <form name="busca">
+                                <input type="text" id="barra_busca">
+                                <button id="bt_busca"><span></span><a>Buscar</a></button>
+                            </form>
+                        </div>
+                    </div>
+                    <div id="header_carrinho">
+                        <a href="#">CARRINHO<span></span></a>
+                    </div>
+                </div>               
+            </div>
+        </header>
+        <main>
+            <div id="carousel" class="owl-carousel owl-theme">
+                <div class="item"><img src="{% static 'img/1.webp'%}"></div>
+                <div class="item"><img src="{% static 'img/2.webp'%}"></div>
+                <div class="item"><img src="{% static 'img/3.webp'%}"></div>
+                <div class="item"><img src="{% static 'img/4.webp'%}"></div>
+                <div class="item"><img src="{% static 'img/5.webp'%}"></div>
+                <div class="item"><img src="{% static 'img/6.webp'%}"></div>
+                <div class="item"><img src="{% static 'img/7.webp'%}"></div>
+                <div class="item"><img src="{% static 'img/8.webp'%}"></div>
+                <div class="item"><img src="{% static 'img/9.webp'%}"></div>
+                <div class="item"><img src="{% static 'img/10.webp'%}"></div>
+            </div>
+            <article>
+                <div id="BlocoLayoutConteudo">
+                    <div id="BlocoConteudo"> 
+                        <div class="cima">
+                            <img src="{{ anuncio.image.url }}" style="width: auto;max-width: 400px;; height: 400px;"/>
+                            <div class="lado">
+                                <h1>{{anuncio.title}}</h1>
+                                <div class="descricao">
+                                    <h4>Descrição:</h4>
+                                    <p>{{anuncio.description}}</p>  
+                                </div>  
+                                <div class="comprar">
+                                    <h4>R$ {{anuncio.price}}</h4> 
+                                    <div class="btcomprar">
+                                        <a href="/anuncio/{{anuncio.id}}"><span></span>Comprar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                   
+                    </div>
+                </div>
+            </article>
+            
+        </main>
+        <script type="text/javascript" src="{% static 'owlcarousel/docs/assets/vendors/jquery.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'owlcarousel/dist/owl.carousel.js' %}"></script>
+        <script>
+            $(document).ready(function(){
+                $('.owl-carousel').owlCarousel({
+                    loop:true,
+                    margin:10,
+                    nav: true,
+                    dots:false,
+                    items: 5,
+                    navText: ["<img src='{% static './img/back.svg' %}'>", "<img src='{% static './img/next.svg' %}'>"],
+                })
+            });
+        </script>
+    </body>
+</html>

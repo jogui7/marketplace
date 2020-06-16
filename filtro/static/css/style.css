@@ -1,0 +1,375 @@
+html {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+* a {
+    text-decoration: none;
+}
+
+body{
+    margin: 0px;
+    background-color: black;
+    background-image: url("../img/bg3.png");
+    background-repeat: repeat-y;
+    background-position: center;
+}
+
+header {
+    background-color: #997300;
+
+}
+
+header a {
+    color: #FFF;
+
+}
+
+
+#BlocoTopo {
+    width: 1000px;
+    height: 130px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#header {
+    height: 130px;
+    width: 1000px;
+    display: flex;
+}
+
+#header_logo {
+    height: 130px;
+    width: 180px;
+    margin: 0;
+}
+
+#header_logo img{
+    height: 130px;
+    width: 180px;
+}
+
+#coluna_meio_menu {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+#header_busca {
+    width: 610px;
+    padding: 10px;
+    height: 38%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#header_busca form{
+    padding: 10px;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#barra_busca{
+    width: 400px;
+    height: 30px;
+    border: none;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    outline: none;
+}
+
+#bt_busca {
+    display: flex;
+    align-items: center;
+    background-color: #000;
+    border: none;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    width: 90px;
+    height: 30px;
+    outline: none;
+    cursor: pointer;
+}
+
+
+#bt_busca span {
+    background-image: url(../img/search.svg);
+    width: 20px;
+    height: 20px;
+    display: flex;
+    margin-right: 5px;
+}
+
+#header_menu{
+    padding: 10px;
+    height: 38%;
+    width: 610px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#header_menu ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#header_menu li{
+    float: left;
+}
+
+#header_menu li a{
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+#header_carrinho {
+    height: 95px;
+    width: 150px;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+#header_carrinho a{
+    text-decoration: none;
+    color: white;
+}
+
+#header_carrinho a span {
+    display: flex;
+    background-image: url("../img/shopping-cart.svg");
+    width: 60px;
+    height: 60px;
+    margin-top: 15px;
+    margin-left: 10px;
+  }
+
+main{
+    width: 1000px;
+    height: 1500px;
+    display: block;
+    margin: 0 auto;
+}
+
+.owl-carousel{
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+    background-color: silver;
+}
+
+.owl-carousel .owl-stage-outer {
+    width: 940px;
+    height: 200px;
+    margin-left: 30px;
+    position: absolute !important;
+} 
+
+.owl-carousel .owl-stage{
+    margin-top: 15px;
+    height: 170px;
+    position: absolute;
+} 
+
+#carousel .owl-theme {
+    position: relative;
+}
+
+.owl-theme .owl-nav{
+    display: flex !important;
+    justify-content: space-between;
+    height: 200px;
+    margin-top: 0 !important;
+    width: 100%;
+    position: absolute;
+}
+
+.owl-carousel .owl-nav button.owl-prev , .owl-carousel .owl-nav button.owl-next{
+    width: 30px;
+    height: 200px;
+    margin: 0;
+    outline: none;
+    border-radius: 0%;
+}
+
+
+.owl-carousel .owl-item {
+    height: 170px;
+    width: 170px !important;
+    border: 1px solid black;
+    text-align: justify;
+}
+
+article{
+    width: 100%;
+    height: auto;
+}
+
+#BlocoLayoutConteudo{
+    margin-top: 10px;
+    height: 1000px;
+    background: url(../img/bg1.png);
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    display: flex;
+}
+
+#BlocoMenuVertical {
+    width: 200px;
+    height: 500px;
+    padding: 20px;
+}
+
+.btanunciar {
+    height: 60px;
+    width: 220px;
+    background-color: #000;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btanunciar a {
+    display: flex;
+    color: #fff;
+    line-height: 60px;
+    padding: 0 80px;
+}
+
+#lista_filtros{
+    width: 200px;
+    height: 450px;
+    padding: 10px;
+    margin: 10px 0 0 0;
+    list-style: none;
+    border-radius: 15px;
+    background-color: wheat;
+}
+
+#lista_filtros h3{
+    display: block;
+    width: 70px;
+    margin: 10px auto;
+}
+
+#lista_filtros a {
+    display: block;
+    padding: 10px 0;
+    display: flex;
+}
+
+.estado {
+    font-size: 16px;
+    font-weight: bold;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.estado span {
+    background: url(../img/book-stage.svg);
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+    display: flex;
+}
+
+.categorias {
+    font-size: 16px;
+    font-weight: bold;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.categorias span {
+    background: url(../img/three-books.svg);
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+    display: flex;
+}
+
+.filtro {
+    margin-left: 10px;
+}
+
+
+#BlocoConteudo {
+    width: 800px;
+    height: 1000px;
+    padding: 10px 20px;
+    margin: 0px;
+    display: flex;
+}
+
+#produtos {
+    list-style: none;
+    border-radius: 15px;
+    width: 720px;
+    min-height: 1000px;
+    padding-left: 20px;
+}
+
+.anuncio {
+    width: 210px;
+    height: 400px;
+    border-radius: 15px;
+    padding-top: 30px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: wheat;
+    float: left;
+}
+
+.anuncio h4 {
+    margin: 10px 0;
+}
+
+.anuncio p {
+    text-align: justify;
+    width: 162px;
+    height: 90px;
+    margin-top: 0;
+}
+
+.btcomprar {
+    height: 40px;
+    width: 100px;
+    background-color: #000;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btcomprar a {
+    display: flex;
+    color: #fff;
+}
+
+.btcomprar a span {
+    margin-right: 5px;
+    display: flex;
+    background-image: url("../img/shopping-cart.svg");
+    width: 20px;
+    height: 20px;
+  }
